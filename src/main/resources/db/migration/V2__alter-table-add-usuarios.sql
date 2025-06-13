@@ -1,0 +1,1 @@
+alter table usuarios add column fecha_nacimiento date not null;

@@ -7,6 +7,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 @Getter
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
@@ -24,6 +27,7 @@ public class Usuario {
     private String appeldioPaterno;
     private String username;
     private String password;
+    private LocalDate fechaNacimiento;
 
     @Embedded
     private Direccion direccion;
@@ -35,6 +39,7 @@ public class Usuario {
         this.nombre = user.nombre();
         this.password = user.password();
         this.direccion = new Direccion(user.direccion());
+        this.fechaNacimiento = user.fechaNacimiento();
     }
 
 

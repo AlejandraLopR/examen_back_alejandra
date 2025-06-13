@@ -5,6 +5,8 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.time.LocalDate;
+
 public record DatosUsuario(
     @NotBlank
     String nombre,
@@ -16,7 +18,10 @@ public record DatosUsuario(
     String username,
     @NotBlank
     String password,
+    @NotBlank
+    LocalDate fechaNacimiento,
     @NotNull
     @Valid
     DatosDireccion direccion
+
 ) {}
