@@ -10,9 +10,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Getter
 @EqualsAndHashCode(of = "id")
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "Usarios")
 @Table (name = "usuarios")
@@ -24,7 +22,7 @@ public class Usuario {
 
     private String nombre;
     private String apellidoMaterno;
-    private String appeldioPaterno;
+    private String apellidoPaterno;
     private String username;
     private String password;
     private LocalDate fechaNacimiento;
@@ -32,11 +30,44 @@ public class Usuario {
     @Embedded
     private Direccion direccion;
 
+    public Usuario(){}
+    public Long getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
     public Usuario(DatosUsuario user){
         this.nombre = user.nombre();
-        this.appeldioPaterno = user.apellidoPaterno();
-        this.apellidoMaterno = user.appelldoMaterno();
-        this.nombre = user.nombre();
+        this.apellidoPaterno = user.apellidoPaterno();
+        this.apellidoMaterno = user.apellidoMaterno();
+        this.username = user.username();
         this.password = user.password();
         this.direccion = new Direccion(user.direccion());
         this.fechaNacimiento = user.fechaNacimiento();

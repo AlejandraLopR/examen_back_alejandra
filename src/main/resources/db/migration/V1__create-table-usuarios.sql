@@ -1,9 +1,9 @@
 create table usuarios(
     id bigint not null auto_increment,
     nombre varchar(100) not null,
-    apellido_paterno varchar(100) not null unique,
-    apellido_materno varchar(100) not null unique,
-    username varchar(100) not null,
+    apellido_paterno varchar(100) not null ,
+    apellido_materno varchar(100) not null ,
+    username varchar(100) not null unique,
     password varchar(50) not null,
     calle varchar(100) not null,
     colonia varchar(100) not null,

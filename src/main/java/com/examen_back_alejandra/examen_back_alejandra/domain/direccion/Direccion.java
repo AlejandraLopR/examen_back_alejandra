@@ -8,8 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Embeddable
-@Getter
-@NoArgsConstructor
+
 @AllArgsConstructor
 public class Direccion {
     private String calle;
@@ -19,6 +18,8 @@ public class Direccion {
     private Integer codigoPostal;
     private String ciudad;
 
+    public Direccion() {
+    }
     public Direccion(DatosDireccion direccion){
         this.calle =direccion.calle();
         this.codigoPostal = direccion.codigoPostal();
@@ -28,5 +29,27 @@ public class Direccion {
         this.ciudad = direccion.ciudad();
     }
 
+    public String getCalle() {
+        return calle;
+    }
 
+    public String getNumeroInterior() {
+        return numeroInterior;
+    }
+
+    public String getNumeroExterior() {
+        return numeroExterior;
+    }
+
+    public String getColonia() {
+        return colonia;
+    }
+
+    public Integer getCodigoPostal() {
+        return codigoPostal;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
 }
